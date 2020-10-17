@@ -13,8 +13,8 @@ Scenario: Add two numbers
 Scenario: Create a new employee with a mandatory details
 	#Given I opened my application
 	#Then I should see employee datails page
-	When I fill all the mandatory details
-	| name     | age | Phone      | Email                 |
+	When I fill all the mandatory details 01
+	| Name     | Age | Phone      | Email                 |
 	| Vinicius | 28  | 9126720999 | vinicius@vinicius.com |
 	| Pinho | 26  | 652356566 | pedro@vinicius.com |
 	| Rosana | 45  | 4558555 | rosana@vinicius.com |

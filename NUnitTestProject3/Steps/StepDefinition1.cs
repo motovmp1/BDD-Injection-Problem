@@ -49,7 +49,7 @@ namespace NUnitTestProject3.Steps
             }
         }
 
-        [When(@"I fill all the mandatory details")]
+        [When(@"I fill all the mandatory details 01")]
         public void WhenIFillAllTheMandatoryDetails(Table table)
         {
 
@@ -60,13 +60,15 @@ namespace NUnitTestProject3.Steps
             //Console.WriteLine(details.Name);
             //Console.WriteLine(details.Phone);
 
-            var details = table.CreateSet<EmployeesDetails>();
+            //var details = table.CreateSet<EmployeesDetails>();
 
-            foreach (EmployeesDetails emp in details)
-            {
+            var details = table.CreateDynamicSet();
+            //foreach (EmployeesDetails emp in details)
+            foreach (var emp in details)
+             {
                 Console.WriteLine("");
                 Console.WriteLine("The details of employeees :" + emp.Name);
-                Console.WriteLine("========================================");
+                Console.WriteLine("===================  This is the first one =====================");
                 Console.WriteLine(emp.Age);
                 Console.WriteLine(emp.Email);
                 Console.WriteLine(emp.Name);
@@ -74,10 +76,11 @@ namespace NUnitTestProject3.Steps
                 Console.WriteLine("=========================================");
                 Console.WriteLine("");
 
-
-
-
             }
+
+            
+
+
 
         }
         [When(@"I fiil all the mandatory details (.*), (.*) and (.*)")]
@@ -141,6 +144,10 @@ namespace NUnitTestProject3.Steps
 
             Console.WriteLine((scenarioContext.ScenarioInfo.Title));
             Console.WriteLine(scenarioContext.CurrentScenarioBlock);
+
+            
+            
+
 
         }   
         

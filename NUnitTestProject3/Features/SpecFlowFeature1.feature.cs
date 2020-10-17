@@ -147,8 +147,8 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "name",
-                            "age",
+                            "Name",
+                            "Age",
                             "Phone",
                             "Email"});
                 table1.AddRow(new string[] {
@@ -172,7 +172,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "465565454",
                             "driano@vinicius.com"});
 #line 16
- testRunner.When("I fill all the mandatory details", ((string)(null)), table1, "When ");
+ testRunner.When("I fill all the mandatory details 01", ((string)(null)), table1, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
