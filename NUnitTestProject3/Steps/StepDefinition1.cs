@@ -74,7 +74,7 @@ namespace NUnitTestProject3.Steps
                 Console.WriteLine("=========================================");
                 Console.WriteLine("");
 
-                
+
 
 
             }
@@ -88,7 +88,64 @@ namespace NUnitTestProject3.Steps
             Console.WriteLine("Phone: " + phone);
             scenarioContext["InfoforNextStep"] = "Step1 Passed";
             Console.WriteLine(scenarioContext["InfoforNextStep"].ToString());
-        }
+            
+
+
+            List<EmployeesDetails> empDetails = new List<EmployeesDetails>() // instancia da minha classe employee na forma de lista
+            {
+                new EmployeesDetails()
+                {
+                    Name = "Daniel",
+                    Age = 26,
+                    Email = "daniel@daniel.com",
+                    Phone = 12345645
+
+                },
+
+                new EmployeesDetails()
+                {
+                    Name = "Pedro",
+                    Age = 26,
+                    Email = "Pedro@daniel.com",
+                    Phone = 223565656
+
+                },
+
+                new EmployeesDetails()
+                {
+                    Name = "ronaldo",
+                    Age = 26,
+                    Email = "rnaldo@daniel.com",
+                    Phone = 3352655
+                }
+
+            };
+            // save the value in scenario context
+            scenarioContext.Add("EmpDetails", empDetails);
+
+            // get value from scenario 
+
+            var emplist = scenarioContext.Get<IEnumerable<EmployeesDetails>>("EmpDetails");
+
+            foreach (EmployeesDetails emp in emplist)
+            {
+                Console.WriteLine("============== List using context ======================");
+                Console.WriteLine("The employee name is :" + emp.Name);
+                Console.WriteLine("The employee Age is :" + emp.Age);
+                Console.WriteLine("The employee Email is :" + emp.Email);
+                Console.WriteLine("The employee Phone is :" + emp.Phone);
+                Console.WriteLine("");
+                Console.WriteLine("======================================");
+
+            }
+
+            Console.WriteLine((scenarioContext.ScenarioInfo.Title));
+            Console.WriteLine(scenarioContext.CurrentScenarioBlock);
+
+        }   
+        
+
+        
 
     }
 }
